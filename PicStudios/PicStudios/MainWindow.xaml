@@ -1,0 +1,48 @@
+﻿<Window x:Class="PicStudios.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PicStudios"
+        mc:Ignorable="d"
+        Title="PicStudios" Height="450" Width="800">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF00C5FF">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="4"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Background="DarkGray" Orientation="Horizontal">
+
+            </StackPanel>
+
+            <Grid x:Name="grd_Tool_Size" Grid.Row="1" Cursor="SizeNS" MouseDown="grd_Tool_Size_MouseDown" MouseMove="grd_Tool_Size_MouseMove" Background="#FF00C5FF" MouseUp="grd_Tool_Size_MouseUp" MouseLeave="grd_Tool_Size_MouseUp"/>
+
+        </Grid>
+
+        <Grid x:Name="InletGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1" Background="#FF00C5FF">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Vertical" Grid.Column="1" Background="LightGray">
+                    
+                </StackPanel>
+
+                <Grid x:Name="grd_Property_Size" Grid.Column="0" Cursor="SizeWE" MouseDown="grd_Property_Size_MouseDown" MouseMove="grd_Property_Size_MouseMove" MouseUp="grd_Property_Size_MouseUp" Background="#FF00C5FF" MouseLeave="grd_Property_Size_MouseUp"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
