@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace PicStudios
 {
@@ -64,5 +65,21 @@ namespace PicStudios
                 InletGrid.ColumnDefinitions.ElementAt(1).Width = new GridLength(InletGrid.ActualWidth - e.GetPosition(InletGrid).X + 2);
         }
         #endregion
+
+        private void btn_load_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog() { Multiselect = true, Filter = "Image File|*.jpg", Title = "Load Images"};
+            
+            if(ofd.ShowDialog().Value)
+            {
+                foreach (string file in ofd.FileNames)
+                {
+                    Image_Entry entry = new Image_Entry();
+
+                    if(entry.setImage(file))
+                        lst_Images.Items.Add(entry);
+                }
+            }
+        }
     }
 }

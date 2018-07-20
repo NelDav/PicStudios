@@ -17,8 +17,8 @@
                 <RowDefinition/>
                 <RowDefinition Height="4"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Background="DarkGray" Orientation="Horizontal">
-
+            <StackPanel Grid.Row="0" Background="DarkGray" Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True">
+                <Button x:Name="btn_load" Width="{Binding ActualHeight, ElementName=btn_load, Mode=OneWay}" Click="btn_load_Click"/>
             </StackPanel>
 
             <Grid x:Name="grd_Tool_Size" Grid.Row="1" Cursor="SizeNS" MouseDown="grd_Tool_Size_MouseDown" MouseMove="grd_Tool_Size_MouseMove" Background="#FF00C5FF" MouseUp="grd_Tool_Size_MouseUp" MouseLeave="grd_Tool_Size_MouseUp"/>
@@ -37,9 +37,21 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Orientation="Vertical" Grid.Column="1" Background="LightGray">
-                    
-                </StackPanel>
+                <Grid x:Name="propertyColumn" Grid.Column="1" Background="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <Button x:Name="btn_back" Content="&lt;&lt;" VerticalAlignment="Top" BorderBrush="#FF00C5FF" Foreground="{x:Null}" Width="52">
+                            <Button.Background>
+                                <ImageBrush ImageSource="RSS/back.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                    <ListBox x:Name="lst_Images" Grid.Row="1" Background="Transparent"/>
+                </Grid>
 
                 <Grid x:Name="grd_Property_Size" Grid.Column="0" Cursor="SizeWE" MouseDown="grd_Property_Size_MouseDown" MouseMove="grd_Property_Size_MouseMove" MouseUp="grd_Property_Size_MouseUp" Background="#FF00C5FF" MouseLeave="grd_Property_Size_MouseUp"/>
             </Grid>
