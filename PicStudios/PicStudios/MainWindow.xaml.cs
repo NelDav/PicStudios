@@ -75,7 +75,7 @@ namespace PicStudios
                     Image_Entry entry = new Image_Entry();
 
                     if(entry.setImage(file))
-                        lst_Images.Items.Add(entry);
+                        imageImporter.lst_Images.Items.Add(entry);
                 }
             }
         }

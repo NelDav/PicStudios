@@ -52,8 +52,7 @@ namespace PicStudios.Widgets
 
         private void lbl_hours_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key != Key.D)
-                e.
+
         }
 
         private void timeUpDown_LostFocus(object sender, RoutedEventArgs e)

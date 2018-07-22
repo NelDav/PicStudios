@@ -19,7 +19,7 @@
                 <RowDefinition Height="4"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Background="DarkGray" Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True">
-                <Button x:Name="btn_load" Width="{Binding ActualHeight, ElementName=btn_load, Mode=OneWay}" Click="btn_load_Click">
+                <Button x:Name="btn_import" Width="{Binding ActualHeight, ElementName=btn_load, Mode=OneWay}" Click="btn_load_Click">
                     <Button.Template>
                         <ControlTemplate>
                             <Image Source="RSS/loadFile.png"/>
@@ -61,13 +61,11 @@
                             </Button.Template>
                         </Button>
                     </StackPanel>
-                    <ListBox x:Name="lst_Images" Grid.Row="1" Background="Transparent" SelectionMode="Extended"/>
+                    <Tools:ImageImporter x:Name="imageImporter" Grid.Row="1"/>
                 </Grid>
 
                 <Grid x:Name="grd_Property_Size" Grid.Column="0" Cursor="SizeWE" MouseDown="grd_Property_Size_MouseDown" MouseMove="grd_Property_Size_MouseMove" MouseUp="grd_Property_Size_MouseUp" Background="#FF00C5FF" MouseLeave="grd_Property_Size_MouseUp"/>
             </Grid>
-
-            <Tools:RedateTool Grid.Column="0"/>
         </Grid>
     </Grid>
 </Window>
