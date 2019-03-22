@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PicStudios.Widgets"
-             mc:Ignorable="d" Height="44.742" Width="90.918" LostFocus="timeUpDown_LostFocus">
+             mc:Ignorable="d" Height="44.742" Width="90.918">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
@@ -21,9 +21,9 @@
             </Grid.ColumnDefinitions>
 
             <Rectangle Grid.Column="0" Grid.ColumnSpan="3" Stroke="#FF707070"/>
-            <Label x:Name="lbl_hours" Grid.Column="0" Content="00" VerticalAlignment="Center" HorizontalAlignment="Center" MouseDown="lbl_hours_MouseDown" PreviewKeyDown="lbl_hours_PreviewKeyDown"/>
-            <Label x:Name="lbl_minutes" Grid.Column="1" Content="00" VerticalAlignment="Center" HorizontalAlignment="Center" MouseDown="lbl_minutes_MouseDown"/>
-            <Label x:Name="lbl_secconds" Grid.Column="2" Content="00" VerticalAlignment="Center" HorizontalAlignment="Center" MouseDown="lbl_secconds_MouseDown"/>
+            <TextBox x:Name="txt_hours" Grid.Column="0" Text="00" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="{x:Null}" PreviewTextInput="txt_hours_PreviewTextInput"/>
+            <TextBox x:Name="txt_minutes" Grid.Column="1" Text="00" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="{x:Null}" PreviewTextInput="txt_minutes_PreviewTextInput"/>
+            <TextBox x:Name="txt_secconds" Grid.Column="2" Text="00" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="{x:Null}" PreviewTextInput="txt_secconds_PreviewTextInput"/>
             <Label Grid.Column="0" Grid.ColumnSpan="2" Content=":" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Grid.Column="1" Grid.ColumnSpan="2" Content=":" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>

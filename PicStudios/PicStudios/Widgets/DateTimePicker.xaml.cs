@@ -18,11 +18,12 @@ namespace PicStudios.Widgets
     /// <summary>
     /// Interaktionslogik für DateTimePicker.xaml
     /// </summary>
-    public partial class DateTimePicker : UserControl
+    public partial class DateTimePicker : DatePicker
     {
         public DateTimePicker()
         {
             InitializeComponent();
+            //DisplayDate = Date;
         }
     }
 }

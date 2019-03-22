@@ -20,49 +20,47 @@ namespace PicStudios.Widgets
     /// </summary>
     public partial class TimeUpDown : UserControl
     {
-        private int hours, minutes, seconds;
+        private void txt_hours_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int number;
+            if (int.TryParse(txt_hours.Text + e.Text, out number))
+            {
+                if(number > 24)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
 
         private SolidColorBrush selectedColor = new SolidColorBrush(Color.FromArgb(255, 51, 153, 255));
-
-        private void reset_Background()
-        {
-            SolidColorBrush solidColorBrush = new SolidColorBrush(Color.FromArgb(0, 255, 255, 255));
-            lbl_hours.Background = solidColorBrush;
-            lbl_minutes.Background = solidColorBrush;
-            lbl_secconds.Background = solidColorBrush;
-        }
-
-        private void lbl_hours_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            reset_Background();
-            lbl_hours.Background = selectedColor;
-        }
-
-        private void lbl_minutes_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            reset_Background();
-            lbl_minutes.Background = selectedColor;
-        }
-
-        private void lbl_secconds_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            reset_Background();
-            lbl_secconds.Background = selectedColor;
-        }
-
-        private void lbl_hours_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void timeUpDown_LostFocus(object sender, RoutedEventArgs e)
-        {
-            reset_Background();
-        }
 
         public TimeUpDown()
         {
             InitializeComponent();
+        }
+
+        private void txt_minutes_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int number;
+            if (int.TryParse(txt_minutes.Text + e.Text, out number))
+            {
+                if (number > 60)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txt_secconds_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int number;
+            if (int.TryParse(txt_secconds.Text + e.Text, out number))
+            {
+                if (number > 60)
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

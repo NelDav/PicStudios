@@ -70,6 +70,10 @@ namespace PicStudios
             
             if(ofd.ShowDialog().Value)
             {
+                Tools.ImageImporter imageImporter = new Tools.ImageImporter();
+                Grid.SetRow(imageImporter, 1);
+                propertyColumn.Children.Add(imageImporter);
+
                 foreach (string file in ofd.FileNames)
                 {
                     Image_Entry entry = new Image_Entry();
@@ -78,6 +82,11 @@ namespace PicStudios
                         imageImporter.lst_Images.Items.Add(entry);
                 }
             }
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            propertyColumn.Children.Clear();
         }
     }
 }

@@ -40,20 +40,22 @@
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
+            <Tools:RedateTool/>
+
             <Grid Grid.Column="1" Background="#FF00C5FF">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Grid x:Name="propertyColumn" Grid.Column="1" Background="LightGray">
+                <Grid Grid.Column="1" Background="LightGray">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
-                        <Button x:Name="btn_back" Content="&lt;&lt;" VerticalAlignment="Top" BorderBrush="#FF00C5FF" Foreground="{x:Null}" Width="52">
+                        <Button x:Name="btn_back" Content="&lt;&lt;" BorderBrush="#FF00C5FF" Foreground="{x:Null}" Width="52" Click="btn_back_Click">
                             <Button.Template>
                                 <ControlTemplate>
                                     <Image Source="RSS/back.png"/>
@@ -61,7 +63,8 @@
                             </Button.Template>
                         </Button>
                     </StackPanel>
-                    <Tools:ImageImporter x:Name="imageImporter" Grid.Row="1"/>
+
+                    <Grid Grid.Row="1" x:Name="propertyColumn"/>
                 </Grid>
 
                 <Grid x:Name="grd_Property_Size" Grid.Column="0" Cursor="SizeWE" MouseDown="grd_Property_Size_MouseDown" MouseMove="grd_Property_Size_MouseMove" MouseUp="grd_Property_Size_MouseUp" Background="#FF00C5FF" MouseLeave="grd_Property_Size_MouseUp"/>

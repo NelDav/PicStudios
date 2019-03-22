@@ -22,8 +22,7 @@
         <RadioButton x:Name="rb_addDate" Grid.Row="1" Grid.Column="0" Content="Add time to the picture date" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0"/>
         <RadioButton x:Name="rb_subDate" Grid.Row="2" Grid.Column="0" Content="Subtract time from the picture date" FontSize="16" VerticalAlignment="Center" Margin="40,0,0,0"/>
 
-        <DatePicker x:Name="dp_newDate" Grid.Row="0" Grid.Column="1"/>
-        <Widgets:TimeUpDown/>
+        <Widgets:DateTimePicker Grid.Column="1" Grid.Row="0"/>
 
     </Grid>
 </UserControl>
